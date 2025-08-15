@@ -13,7 +13,7 @@ const ProductDetailView: React.FC<IProduct> = ({id, name, image, description, st
       alert("You must be logged to add products")
     } else {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      const productExist = cart.some((item) => {
+      const productExist = cart.some((item: IProduct) => {
         if(item.id === id) return true
         return false;
       })
